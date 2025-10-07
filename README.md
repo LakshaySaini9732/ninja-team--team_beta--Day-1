@@ -2,4 +2,4 @@
 
 Members:- Lakshay , Arpit Dogra , Divanshu Pathania , KamalPreet 
 
-Purpose:- Trainig repo fo Git/GitHub basics for Ninja Deliveries
+Purpose:- Trainig repo for Git/GitHub basics for Ninja Deliveries

@@ -3,3 +3,5 @@
 Members:- Lakshay Saini , Arpit Dogra , Divanshu Pathania , KamalPreet Singh
 
 Purpose:- Trainig repo for Git/GitHub basics for Ninja Deliveries
+
+I Lakshay Saini , a full stack developer.

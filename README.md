@@ -1,6 +1,6 @@
 # ninja-team--team_beta--Day-1
 
-Members:- Lakshay Saini , Arpit Dogra , Sakshi , KamalPreet Singh
+Members:- Lakshay Saini , Arpit Dogra  , KamalPreet Singh
 
 Purpose:- Trainig repo for Git/GitHub basics for Ninja Deliveries
 

@@ -1,24 +1,50 @@
-import React, { useState } from "react";
-import { SafeAreaView, StyleSheet } from "react-native";
-import GroceryList from "../../components/GroceryList"; // ✅ correct path
+import React, { useState, useEffect } from "react";
+import { SafeAreaView, Image, StyleSheet } from "react-native";
+import GroceryList from "../../components/GroceryList"; // adjust if your component path differs
 
-export default function App() {
-  const [cart, setCart] = useState<string[]>([]);
+const App = () => {
+  const [showSplash, setShowSplash] = useState(true);
+  const [cart, setCart] = useState<any[]>([]);
 
-  const handleAddToCart = (item: string) => {
-    setCart((prev) => [...prev, item]);
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 3000); // 3 seconds splash
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleAddToCart = (item: any) => {
+    setCart([...cart, item]);
   };
 
+  if (showSplash) {
+    return (
+      <SafeAreaView style={styles.splashContainer}>
+        <Image
+          source={require("../../assets/images/grocery.png")} // correct relative path
+          style={styles.splashImage}
+          resizeMode="cover"
+        />
+      </SafeAreaView>
+    );
+  }
+
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <GroceryList onAddToCart={handleAddToCart} cart={cart} />
+    <SafeAreaView style={{ flex: 1 }}>
+      <GroceryList cart={cart} setCart={setCart} onAddToCart={handleAddToCart} />
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  safeArea: {
+  splashContainer: {
     flex: 1,
-    backgroundColor: "#f9fafb",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#f3f2f3ff",
+  },
+  splashImage: {
+    width: "80%",
+    height: "50%",
   },
 });
+
+export default App;

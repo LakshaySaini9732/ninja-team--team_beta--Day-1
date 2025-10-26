@@ -1,14 +1,24 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
+interface GroceryItem {
+  id: string;
+  name: string;
+  price: number;
+  image: any;
+}
+
 interface AddToCartButtonProps {
-  item: string;
-  onAddToCart: (item: string) => void;
+  item: GroceryItem;
+  onAddToCart: (item: GroceryItem) => void;
 }
 
 const AddToCartButton: React.FC<AddToCartButtonProps> = ({ item, onAddToCart }) => {
   return (
-    <TouchableOpacity style={styles.button} onPress={() => onAddToCart(item)}>
+    <TouchableOpacity
+      style={styles.button}
+      onPress={() => onAddToCart(item)}
+    >
       <Text style={styles.buttonText}>Add</Text>
     </TouchableOpacity>
   );
@@ -16,9 +26,9 @@ const AddToCartButton: React.FC<AddToCartButtonProps> = ({ item, onAddToCart }) 
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: "#16a34a",
+    backgroundColor: "#4f46e5",
     paddingVertical: 6,
-    paddingHorizontal: 14,
+    paddingHorizontal: 12,
     borderRadius: 8,
   },
   buttonText: {
